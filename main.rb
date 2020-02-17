@@ -12,6 +12,7 @@ require_relative 'app/normalizers/language_normalizer.rb'
 search = Search.new(
   'Yukihiro Matsumoto', LanguageNormalizer.new(Persistent::Language.all)
 )
+
 Benchmark.bm do |x|
   x.report do
     p search.call
